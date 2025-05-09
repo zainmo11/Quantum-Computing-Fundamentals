@@ -8,16 +8,18 @@ This repository contains implementations of fundamental quantum computing protoc
 - [Bell States](#bell-states)
 - [Superdense Coding](#superdense-coding)
 - [Quantum Teleportation](#quantum-teleportation)
+- [Quantum Random Number Generator](#quantum-random-number-generator)
 - [Results](#results)
 - [Usage](#usage)
 
 ## Overview
 
-This project demonstrates three fundamental quantum computing concepts:
+This project demonstrates four fundamental quantum computing concepts:
 
 1. **Bell States**: Creation and visualization of the four maximally entangled two-qubit states.
 2. **Superdense Coding**: A protocol that allows sending two classical bits by manipulating a single qubit.
 3. **Quantum Teleportation**: A technique to transfer the exact state of a qubit from one location to another using entanglement.
+4. **Quantum Random Number Generator (QRNG)**: Generation of true random numbers using quantum superposition.
 
 ## Dependencies
 
@@ -29,12 +31,13 @@ qiskit-aer
 matplotlib
 numpy
 IPython
+pylatexenc
 ```
 
 Install all dependencies with:
 
 ```bash
-pip install qiskit qiskit-aer matplotlib numpy IPython
+pip install qiskit qiskit-aer matplotlib numpy IPython pylatexenc
 ```
 
 ## Bell States
@@ -74,6 +77,16 @@ The implementation:
 
 The code verifies the teleportation by computing the fidelity between the original and teleported states.
 
+## Quantum Random Number Generator
+
+The Quantum Random Number Generator (QRNG) leverages quantum mechanical properties to generate truly random numbers, which is a key application in cryptography and security.
+
+The implementation:
+1. Creates a single qubit in superposition using a Hadamard gate
+2. Measures the qubit, collapsing it to either 0 or 1 with equal probability
+3. Repeats this process to generate a series of random bits
+4. Demonstrates the uniform distribution of the generated random numbers
+
 ## Results
 
 ### Bell States
@@ -84,6 +97,9 @@ The results demonstrate successful transmission of all possible two-bit messages
 
 ### Quantum Teleportation
 The quantum teleportation protocol successfully transfers random quantum states with perfect fidelity (1.0), confirming that the state is teleported correctly.
+
+### Quantum Random Number Generator
+The QRNG implementation generates 100 random bits with an approximately uniform distribution between 0 and 1, demonstrating the true randomness that can only be achieved through quantum processes.
 
 ## Usage
 
@@ -98,6 +114,9 @@ Each section of the code can be run independently:
 
 # For Quantum Teleportation
 # Run the quantum_teleportation.py code
+
+# For Quantum Random Number Generator
+# Run the qrng.py code
 ```
 
 Note: The actual files might need to be created from the code snippets in the original file.
