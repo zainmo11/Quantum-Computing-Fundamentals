@@ -1,4 +1,4 @@
-# Quantum Computing Demonstrations
+# Quantum Computing Implementations
 
 This repository contains implementations of fundamental quantum computing protocols using Qiskit, IBM's open-source quantum computing framework.
 
